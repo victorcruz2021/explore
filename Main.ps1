@@ -12,3 +12,6 @@ if ( $Domain -eq "explore.local"  ){
     Write-Output "This is not a Domain Joined server
     Domain name = ${Domain}"
 }
+
+#Firewall Rule to enable ICMP protocol
+New-NetFirewallRule -DisplayName “ICMPv4” -Direction Inbound -Action Allow -Protocol icmpv4 -Enabled True
